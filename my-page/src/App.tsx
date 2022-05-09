@@ -1,21 +1,15 @@
 import React from 'react';
-import bio from './bio.json';
+import data from './bio.json';
+import Bio from './Bio/Bio';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import './App.css';
 
-function App() {
-  return (
+const App = () => (
     <div className='general'>
-      <header className="App-header">
-        <h1>{bio.name}</h1>
-      </header>
-      <div className='bio'>
-        <div>{bio.bio}</div>
-      </div>
-      <footer>
-        <div className='contacts'>{bio.contacts}</div>
-      </footer>      
+      <Header name={ data.name }/>
+      <Bio bio={ data.bio }/>
+      <Footer contacts={ data.contacts } />
     </div>
-  );
-}
-
+);
 export default App;
